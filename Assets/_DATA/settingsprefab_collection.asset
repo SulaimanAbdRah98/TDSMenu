@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73787872eef162f498f88ce113010470, type: 3}
+  m_Name: settingsprefab_collection
+  m_EditorClassIdentifier: 
+  TogglePrefab: {fileID: 5258685366699377883, guid: cc9fd5efab39d474989d9c049431b39b, type: 3}
+  DropdownPrefab: {fileID: 5852698717320468703, guid: afd96fd235b318448bd5c3c6271aa0d2, type: 3}
