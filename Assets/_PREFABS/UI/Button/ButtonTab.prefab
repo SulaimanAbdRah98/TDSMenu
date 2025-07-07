@@ -9,6 +9,30 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 27420070297619194, guid: 630fff4499b88b9459554ca65c3560e8, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 0.6150943
+      objectReference: {fileID: 0}
+    - target: {fileID: 27420070297619194, guid: 630fff4499b88b9459554ca65c3560e8, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 0.6150943
+      objectReference: {fileID: 0}
+    - target: {fileID: 27420070297619194, guid: 630fff4499b88b9459554ca65c3560e8, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 0.6150943
+      objectReference: {fileID: 0}
+    - target: {fileID: 27420070297619194, guid: 630fff4499b88b9459554ca65c3560e8, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.7132075
+      objectReference: {fileID: 0}
+    - target: {fileID: 27420070297619194, guid: 630fff4499b88b9459554ca65c3560e8, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.7132075
+      objectReference: {fileID: 0}
+    - target: {fileID: 27420070297619194, guid: 630fff4499b88b9459554ca65c3560e8, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.7132075
+      objectReference: {fileID: 0}
+    - target: {fileID: 27420070297619194, guid: 630fff4499b88b9459554ca65c3560e8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -142,7 +166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Transform: {fileID: 0}
-  DefaultWidth: 550
-  DefaultHeight: 550
+  DefaultWidth: 400
+  DefaultHeight: 400
+  Locked: 0
   ExpandedWidth: 0
   OriginalPosition: {x: 0, y: 0}

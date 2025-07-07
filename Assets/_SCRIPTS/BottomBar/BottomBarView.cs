@@ -52,12 +52,18 @@ namespace TDS.UI.BottomBar
             }
         }
 
-        //When user press button...
+
+
+        //This is the function called when user presses one of the bottom buttons
+        //This is the root of it all
         public void SelectedContent(int index)
         {
+            //Stop all animation currently being played
+            //We are going to override them with the new animations we are planning to play
+            //I think it's more satisfying to have the button be more reactive to the player's action at the moment
             LeanTween.reset();
 
-            //Play different animations for locked vs unlocked buttons
+            //If we are clicking on a locked button, it should react and that's it
             if (buttons[index].Locked)
             {
                 ShakeAnimation(buttons[index]);
@@ -110,6 +116,8 @@ namespace TDS.UI.BottomBar
         public void ContentActivated()
         {
             //Do stuff
+            //Since we set prevIndex when we press this button we can use that for whatever we need
+            //We can get buttons[prevIndex] to get the button we are pressing for example to do whatever
             Debug.Log("Content Activated! Index -" + prevIndex.ToString());
         }
 
@@ -118,11 +126,11 @@ namespace TDS.UI.BottomBar
         {
             Debug.Log("Closed");
 
-            //Added this function so we make sure all our buttons are where they should be
+            //Added this function so we make sure all our buttons are back where they should be
             ResetButtons();
         }
 
-        //Just a very basic tweening to put everyone where they need to be
+        //Just a very basic tweening to put everyone back to their original positions
         private void ResetButtons()
         {
             for (int i = 0; i < buttons.Length; i++)
@@ -138,6 +146,7 @@ namespace TDS.UI.BottomBar
 
         //All the more complex animation code goes here for cleanliness!
         //=========ANIMATIONS=============
+        //Animation to play on the selected button
         private void SelectedAnimation(ButtonVisualParameter button)
         {
             //Reset position and increase scale to our target scale
@@ -160,6 +169,7 @@ namespace TDS.UI.BottomBar
             ContentActivated();
         }
 
+        //Animation to play on the non selected button when another button is being selected
         private void NonSelectedAnimation(ButtonVisualParameter button, ButtonVisualParameter selectedButton)
         {
             //Here we are calculating how to move the other buttons
@@ -177,19 +187,10 @@ namespace TDS.UI.BottomBar
         //This function is to generate a shake animation mainly for locked buttons
         private void ShakeAnimation(ButtonVisualParameter button)
         {
-            LTDescr shakeTween = LeanTween.rotateAroundLocal(button.Transform, Vector3.right, shakeAmt, shakePeriodTime)
-            .setEase(LeanTweenType.easeShake) // This is a special ease that is good for shaking
-            .setLoopClamp()
-            .setRepeat(-1);
-
-            // Slow the camera shake down to zero
-            LeanTween.value(gameObject, shakeAmt, 0f, dropOffTime).setOnUpdate(
-                (float val) => {
-                    shakeTween.setTo(Vector3.right * val);
-                }
-            ).setEase(LeanTweenType.easeOutQuad);
+            ShakeAnimation(button.Transform);
         }
 
+        
         private void ShakeAnimation(RectTransform button)
         {
             LTDescr shakeTween = LeanTween.rotateAroundLocal(button, Vector3.right, shakeAmt, shakePeriodTime)
