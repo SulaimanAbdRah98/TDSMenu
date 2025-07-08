@@ -35,10 +35,12 @@ namespace TDS.Tween
             }
         }
 
+        //Tweening function
         private void Tweening(TweenTarget tweenTarget)
         {
             LTDescr tweenDesc = null;
 
+            //Depending on the type of transform tween this is, we will be doing different things
             switch (tweenTarget.Type)
             {
                 case TweenType.MOVE:
@@ -53,6 +55,7 @@ namespace TDS.Tween
                     break;
             }
 
+            //An option to add a bit of a bounce to add a bit of ease and satisfying feeling
             if (tweenTarget.Bounce)
             {
                 tweenDesc.setDelay(0.5f).setEase(tweenTarget.BounceType);
@@ -62,6 +65,7 @@ namespace TDS.Tween
             tweenDesc.setOnComplete(tweenTarget.OnComplete.Invoke);
         }
 
+        //Instantly assign target values
         public override void ApplyTarget()
         {
             base.ApplyTarget();

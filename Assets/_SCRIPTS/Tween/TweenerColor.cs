@@ -26,6 +26,7 @@ namespace TDS.Tween
             }
         }
 
+        //Actual tweening of the color
         private void Tweening(TweenTarget tweenTarget)
         {
             RectTransform rect = (RectTransform)tweenTarget.TargetGO.transform;
@@ -35,6 +36,7 @@ namespace TDS.Tween
             tweenDesc.setOnComplete(tweenTarget.OnComplete.Invoke);
         }
 
+        //Instantly assign target values
         public override void ApplyTarget()
         {
             base.ApplyTarget();
